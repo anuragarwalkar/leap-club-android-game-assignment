@@ -1,11 +1,12 @@
 {
   "expo": {
-    "name": "leap.club-android-game-assignment",
-    "slug": "leap.club-android-game-assignment",
+    "name": "leap-club-android-game-assignment",
+    "slug": "leap-club-android-game-assignment",
     "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "assetBundlePatterns": ["**/*"],
+    "android": {
+      "package": "com.example.game"
+    }
   },
-  "name": "leap.club-android-game-assignment"
+  "name": "leap-club-android-game-assignment"
 }
