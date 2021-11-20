@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import {
+  Button,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { getRandomChar, maxCount } from "../constants/memoryDef";
 import { getHeight, getWidth } from "../utils/utilityFunc";
@@ -54,20 +61,55 @@ export default function App() {
     );
   };
 
+  const mainGameContainer = () => {
+    return (
+      <View style={{ display: "flex" }}>
+        <View style={styles.topBarContainer}>
+          <View>
+            <Text style={styles.counterHeading}>MATCHES</Text>
+            <Text style={styles.counterText}>{matchedCount}</Text>
+          </View>
+          <View>
+            <Text style={styles.counterHeading}>TURNS</Text>
+            <Text style={styles.counterText}>{turnsCount}</Text>
+          </View>
+        </View>
+        <View style={styles.container}>{letters.map(renderItem)}</View>
+      </View>
+    );
+  };
+
+  const resetGame = () => {
+    setTurnsCount(0);
+    setMatchedCount(0);
+    setMatchedIndexs([]);
+    setLetters(getRandomChar());
+  };
+
   return (
     <SafeAreaView>
-      <View>
-        <Text>{matchedCount}</Text>
-      </View>
-      <View>
-        <Text>{turnsCount}</Text>
-      </View>
-      <View style={styles.container}>{letters.map(renderItem)}</View>
+      {letters.length === matchedCount * 2 ? (
+        <View style={styles.winnerContainer}>
+          <Text style={styles.winnerText}>✅ You won the game </Text>
+          <View style={{ marginTop: 20 }}>
+            <Button onPress={resetGame} title="Restart Game" />
+          </View>
+        </View>
+      ) : (
+        mainGameContainer()
+      )}
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  winnerContainer: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: getWidth(),
+    height: getHeight(),
+  },
   container: {
     display: "flex",
     flexDirection: "row",
@@ -75,13 +117,32 @@ const styles = StyleSheet.create({
   },
   card: {
     width: getWidth() / 4.5,
-    height: (getHeight() - 100) / 4,
+    height: getHeight() / 5,
     backgroundColor: "#C216F5",
     justifyContent: "center",
     alignItems: "center",
     margin: 5,
+    borderRadius: 5,
   },
   text: {
     fontSize: 50,
+  },
+  counterText: { textAlign: "center", fontSize: getWidth() * 0.05 },
+  topBarContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingLeft: 10,
+    paddingRight: 10,
+    marginTop: StatusBar.currentHeight + 10,
+
+    marginBottom: 20,
+  },
+  counterHeading: {
+    fontWeight: "bold",
+    fontSize: getWidth() * 0.04,
+  },
+  winnerText: {
+    fontSize: getWidth() * 0.09,
   },
 });
