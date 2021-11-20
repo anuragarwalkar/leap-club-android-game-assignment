@@ -126,6 +126,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 50,
+    color: "white",
   },
   counterText: { textAlign: "center", fontSize: getWidth() * 0.05 },
   topBarContainer: {
