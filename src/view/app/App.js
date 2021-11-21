@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, SafeAreaView, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { getRandomChar, maxCount } from "../../constants/memoryDef";
+import { clone, getRandomChar, maxCount } from "../../constants/memoryDef";
 import styles from "./styles";
 
 export default function App() {
@@ -14,27 +14,25 @@ export default function App() {
     if (!item.matched && matchIndexs.length < 2 && newIndex != matchIndexs[0]) {
       let newItems = matchIndexs;
       if (matchIndexs.length < maxCount) {
-        newItems = [...letters];
+        newItems = clone(letters);
         newItems[newIndex].show = !newItems[newIndex].show;
       }
 
-      if (matchIndexs.length === maxCount - 1) {
+      if (matchIndexs.length === 1) {
         const [oldIndex] = matchIndexs;
         if (letters[oldIndex].text === letters[newIndex].text) {
-          newItems = [...letters];
           newItems[oldIndex].matched = true;
           newItems[newIndex].matched = true;
           setMatchedCount(matchedCount + 1);
         }
         setTimeout(() => {
-          newItems = [...letters];
           if (!newItems[oldIndex].matched && !newItems[oldIndex].matched) {
             newItems[oldIndex].show = false;
             newItems[newIndex].show = false;
           }
-
           setMatchedIndexs([]);
           setTurnsCount(turnsCount + 1);
+          setLetters(newItems);
         }, 600);
       }
 
@@ -56,7 +54,7 @@ export default function App() {
     );
   };
 
-  const mainGameContainer = () => {
+  const gameContainer = () => {
     return (
       <View style={{ display: "flex" }}>
         <View style={styles.topBarContainer}>
@@ -86,12 +84,12 @@ export default function App() {
       {letters.length === matchedCount * 2 ? (
         <View style={styles.winnerContainer}>
           <Text style={styles.winnerText}>✅ You won the game </Text>
-          <View style={{ marginTop: 20 }}>
+          <View style={styles.resetGameContainer}>
             <Button onPress={resetGame} title="Restart Game" />
           </View>
         </View>
       ) : (
-        mainGameContainer()
+        gameContainer()
       )}
     </SafeAreaView>
   );

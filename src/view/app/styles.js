@@ -45,4 +45,5 @@ export default StyleSheet.create({
   winnerText: {
     fontSize: getWidth * 0.09,
   },
+  resetGameContainer: { marginTop: 20 },
 });
