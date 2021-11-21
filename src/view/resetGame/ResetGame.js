@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Button, Text, View } from "react-native";
 import styles from "../app/styles";
 
 export default function ResetGame({ resetGame }) {
