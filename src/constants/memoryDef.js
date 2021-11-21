@@ -17,7 +17,12 @@ const _characters = [
   { id: 16, text: "H", show: false, matched: false },
 ];
 
+const clone = (array) => {
+  return array.map((item) => ({ ...item }));
+};
+
 const _genRandomChar = (array) => {
+  const clonedArray = clone(array);
   let currentIndex = array.length,
     randomIndex;
 
@@ -25,13 +30,13 @@ const _genRandomChar = (array) => {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
+    [clonedArray[currentIndex], clonedArray[randomIndex]] = [
+      clonedArray[randomIndex],
+      clonedArray[currentIndex],
     ];
   }
 
-  return array;
+  return clonedArray;
 };
 
 const getRandomChar = () => {
@@ -39,4 +44,4 @@ const getRandomChar = () => {
 };
 
 const maxCount = 2;
-export { getRandomChar, maxCount };
+export { getRandomChar, maxCount, clone };
