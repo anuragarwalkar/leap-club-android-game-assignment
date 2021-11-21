@@ -1,19 +1,19 @@
 {
   "files": {
-    "app.js": "/leap-club-android-game-assignment/static/js/app.497647a9.chunk.js",
-    "app.js.map": "/leap-club-android-game-assignment/static/js/app.497647a9.chunk.js.map",
+    "app.js": "/leap-club-android-game-assignment/static/js/app.fb4c55e1.chunk.js",
+    "app.js.map": "/leap-club-android-game-assignment/static/js/app.fb4c55e1.chunk.js.map",
     "runtime~app.js": "/leap-club-android-game-assignment/static/js/runtime~app.41f267cc.js",
     "runtime~app.js.map": "/leap-club-android-game-assignment/static/js/runtime~app.41f267cc.js.map",
-    "static/js/2.7a41f9d7.chunk.js": "/leap-club-android-game-assignment/static/js/2.7a41f9d7.chunk.js",
-    "static/js/2.7a41f9d7.chunk.js.map": "/leap-club-android-game-assignment/static/js/2.7a41f9d7.chunk.js.map",
+    "static/js/2.38f2112a.chunk.js": "/leap-club-android-game-assignment/static/js/2.38f2112a.chunk.js",
+    "static/js/2.38f2112a.chunk.js.map": "/leap-club-android-game-assignment/static/js/2.38f2112a.chunk.js.map",
     "index.html": "/leap-club-android-game-assignment/index.html",
     "manifest.json": "/leap-club-android-game-assignment/manifest.json",
     "serve.json": "/leap-club-android-game-assignment/serve.json",
-    "static/js/2.7a41f9d7.chunk.js.LICENSE.txt": "/leap-club-android-game-assignment/static/js/2.7a41f9d7.chunk.js.LICENSE.txt"
+    "static/js/2.38f2112a.chunk.js.LICENSE.txt": "/leap-club-android-game-assignment/static/js/2.38f2112a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime~app.41f267cc.js",
-    "static/js/2.7a41f9d7.chunk.js",
-    "static/js/app.497647a9.chunk.js"
+    "static/js/2.38f2112a.chunk.js",
+    "static/js/app.fb4c55e1.chunk.js"
   ]
 }
