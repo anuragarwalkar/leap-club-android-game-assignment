@@ -1,4 +1,4 @@
-# 📱 Memory Game ([leap.club](https://leap.club/) Assignment)
+# 📱 Card Matching Memory Game ([leap.club](https://leap.club/) Assignment)
 🔻 Download Latest APK from Releases 👉 [From here](https://github.com/anuragarwalkar/leap-club-android-game-assignment/releases) 
 <br/>
 🔻 Initial Web-App Release Link. Hosted on GitHub Pages (Note: UI is not optimized for Web) 👉 [Click here](https://anuragarwalkar.github.io/leap-club-android-game-assignment/) 
