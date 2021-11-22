@@ -1,3 +1,5 @@
+// Required default data
+const maxCount = 2;
 const _characters = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
 const cloneArrayDeep = (array) => {
@@ -42,5 +44,4 @@ const getRandomChar = () => {
   return randomChar.map(defIterator());
 };
 
-const maxCount = 2;
 export { getRandomChar, maxCount, cloneArrayDeep };
