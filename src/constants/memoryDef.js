@@ -39,8 +39,7 @@ const getRandomChar = () => {
   const randomChar = _genRandomChar(_characters.concat(_characters));
 
   // generate id and add default fields
-  const final = randomChar.map(defIterator());
-  return final;
+  return randomChar.map(defIterator());
 };
 
 const maxCount = 2;
